@@ -4,7 +4,6 @@ import 'package:rtu_mirea_app/presentation/bloc/schedule_bloc/schedule_bloc.dart
 import 'package:rtu_mirea_app/presentation/colors.dart';
 import 'package:rtu_mirea_app/presentation/pages/schedule/widgets/autocomplete_group_selector.dart';
 import 'package:rtu_mirea_app/presentation/theme.dart';
-import 'package:rtu_mirea_app/presentation/widgets/keyboard_positioned.dart';
 
 class ScheduleSettingsModal extends StatelessWidget {
   const ScheduleSettingsModal({Key? key, required this.isFirstRun})
@@ -14,7 +13,7 @@ class ScheduleSettingsModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return KeyboardPositioned(
+    return SafeArea(
       child: Container(
         child: Padding(
           padding: const EdgeInsets.all(3.0),
@@ -81,6 +80,7 @@ class ScheduleSettingsModal extends StatelessWidget {
                     ),
                   ),
                 ),
+                const Spacer()
               ],
             ),
             decoration: const BoxDecoration(
@@ -91,7 +91,6 @@ class ScheduleSettingsModal extends StatelessWidget {
             ),
           ),
         ),
-        height: MediaQuery.of(context).size.height * 0.95,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
